@@ -68,6 +68,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-left: 10px;
 }
 
 .brand-logo {
@@ -279,7 +280,7 @@ body {
 
 @media (max-width: 880px) {
     .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
+        display: block;
     }
 
     .hero-logo-card {
@@ -288,6 +289,13 @@ body {
 
     .projects-grid {
         grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero-inner>div {
+        max-width: 720px;
+        /* controls line length */
+        margin: 0 auto;
+        /* centers the hero content */
     }
 }
 
@@ -611,13 +619,6 @@ body {
     width: auto;
 }
 
-.hero-inner {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 3.5rem 0 3rem;
-    display: block;
-}
-
 .product-meta {
     max-width: 900px;
     /* you can change to 100% if you want full width */
@@ -773,6 +774,100 @@ body {
         display: none;
     }
 }
+
 main {
-  flex: 1;   /* ⬅ makes main take remaining height and pushes footer down */
+    flex: 1;
+    /* ⬅ makes main take remaining height and pushes footer down */
+}
+
+/* Hamburger button (desktop: hidden) */
+.nav-toggle {
+    display: none;
+    border: none;
+    background: none;
+    padding: 6px;
+    margin-left: auto;
+    margin-right: 10px;
+    /* NEW — push left slightly */
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(45, 26, 12, 0.85);
+
+    +span {
+        margin-top: 4px;
+    }
+}
+
+/* Mobile nav */
+@media (max-width: 720px) {
+    .site-header-inner {
+        gap: 8px;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        padding: 10px 20px 14px;
+        background: rgba(255, 247, 233, 0.98);
+        border-bottom: 1px solid rgba(242, 226, 201, 0.9);
+        display: none;
+        /* hidden by default */
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .nav-links a {
+        padding: 8px 10px;
+        border-radius: 10px;
+    }
+
+    .nav-links.is-open {
+        display: flex;
+        /* shown when toggled */
+    }
+}
+
+/* HAMBURGER → X ANIMATION */
+.nav-toggle.is-open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Smooth animation */
+.nav-toggle span {
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+@media (max-width: 880px) {
+    .hero-inner {
+        display: block;
+        padding: 40px 0;        /* reduce vertical spacing */
+    }
+
+    .hero-inner > div {
+        max-width: 700px;       /* controls readable width */
+        margin: 0 auto;         /* center the text */
+        padding: 0 10px;        /* prevent touching edges */
+    }
 }

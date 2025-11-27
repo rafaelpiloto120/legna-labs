@@ -39,6 +39,14 @@
                     </div>
                 </div>
             </a>
+
+            <!-- NEW: hamburger button -->
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <nav class="nav-links">
                 <a href="/">Home</a>
                 <a href="/#projects">Projects</a>
@@ -208,6 +216,32 @@
             })();
         </script>
     </footer>
+    <script>
+        // Footer year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Mobile nav toggle
+        (function () {
+            const toggle = document.querySelector(".nav-toggle");
+            const nav = document.querySelector(".nav-links");
+            const links = nav.querySelectorAll("a");
+
+            if (!toggle || !nav) return;
+
+            toggle.addEventListener("click", () => {
+                nav.classList.toggle("is-open");
+                toggle.classList.toggle("is-open");
+            });
+
+            // Close menu when clicking on any link
+            links.forEach(link => {
+                link.addEventListener("click", () => {
+                    nav.classList.remove("is-open");
+                    toggle.classList.remove("is-open");
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>
