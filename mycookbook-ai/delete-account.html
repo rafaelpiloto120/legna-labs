@@ -22,6 +22,16 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/favicon-192.png">
   <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
   <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGN912CQFF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JGN912CQFF');
+  </script>
 </head>
 
 <body>
@@ -203,31 +213,31 @@
     </script>
   </footer>
   <script>
-        // Footer year
-        document.getElementById("year").textContent = new Date().getFullYear();
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-        // Mobile nav toggle
-        (function () {
-            const toggle = document.querySelector(".nav-toggle");
-            const nav = document.querySelector(".nav-links");
-            const links = nav.querySelectorAll("a");
+    // Mobile nav toggle
+    (function () {
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector(".nav-links");
+      const links = nav.querySelectorAll("a");
 
-            if (!toggle || !nav) return;
+      if (!toggle || !nav) return;
 
-            toggle.addEventListener("click", () => {
-                nav.classList.toggle("is-open");
-                toggle.classList.toggle("is-open");
-            });
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("is-open");
+        toggle.classList.toggle("is-open");
+      });
 
-            // Close menu when clicking on any link
-            links.forEach(link => {
-                link.addEventListener("click", () => {
-                    nav.classList.remove("is-open");
-                    toggle.classList.remove("is-open");
-                });
-            });
-        })();
-    </script>
+      // Close menu when clicking on any link
+      links.forEach(link => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("is-open");
+          toggle.classList.remove("is-open");
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>
