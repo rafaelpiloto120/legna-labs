@@ -1,0 +1,88 @@
+{
+  "sources": [
+    {
+      "name": "CX Today",
+      "url": "https://www.cxtoday.com/feed/",
+      "type": "rss",
+      "tags": ["industry", "news"]
+    },
+    {
+      "name": "UC Today",
+      "url": "https://www.uctoday.com/feed/",
+      "type": "rss",
+      "tags": ["industry", "news"]
+    },
+    {
+      "name": "Talkdesk Blog",
+      "url": "https://www.talkdesk.com/blog/feed/",
+      "type": "rss",
+      "tags": ["competitor", "talkdesk"]
+    },
+    {
+      "name": "RingCentral Blog",
+      "url": "https://www.ringcentral.com/us/en/blog/feed/",
+      "type": "rss",
+      "tags": ["competitor", "ringcentral"]
+    },
+    {
+      "name": "Google News - Five9",
+      "url": "https://news.google.com/rss/search?q=Five9&hl=en-US&gl=US&ceid=US:en",
+      "type": "rss",
+      "tags": ["competitor", "five9"]
+    },
+    {
+      "name": "Google News - Genesys",
+      "url": "https://news.google.com/rss/search?q=Genesys+Cloud&hl=en-US&gl=US&ceid=US:en",
+      "type": "rss",
+      "tags": ["competitor", "genesys"]
+    },
+    {
+      "name": "Google News - Talkdesk",
+      "url": "https://news.google.com/rss/search?q=Talkdesk&hl=en-US&gl=US&ceid=US:en",
+      "type": "rss",
+      "tags": ["competitor", "talkdesk"]
+    },
+    {
+      "name": "Google News - RingCentral",
+      "url": "https://news.google.com/rss/search?q=RingCentral&hl=en-US&gl=US&ceid=US:en",
+      "type": "rss",
+      "tags": ["competitor", "ringcentral"]
+    },
+    {
+      "name": "Google News - NICE CXone",
+      "url": "https://news.google.com/rss/search?q=NICE+CXone&hl=en-US&gl=US&ceid=US:en",
+      "type": "rss",
+      "tags": ["competitor", "nice"]
+    },
+    {
+      "name": "Google News - Zoom Contact Center",
+      "url": "https://news.google.com/rss/search?q=Zoom+Contact+Center&hl=en-US&gl=US&ceid=US:en",
+      "type": "rss",
+      "tags": ["competitor", "zoom"]
+    },
+    {
+      "name": "Google News - Amazon Connect",
+      "url": "https://news.google.com/rss/search?q=Amazon+Connect+contact+center&hl=en-US&gl=US&ceid=US:en",
+      "type": "rss",
+      "tags": ["competitor", "amazon"]
+    },
+    {
+      "name": "Google News - Twilio Flex",
+      "url": "https://news.google.com/rss/search?q=Twilio+Flex+contact+center&hl=en-US&gl=US&ceid=US:en",
+      "type": "rss",
+      "tags": ["competitor", "twilio"]
+    },
+    {
+      "name": "Google News - UCaaS",
+      "url": "https://news.google.com/rss/search?q=UCaaS&hl=en-US&gl=US&ceid=US:en",
+      "type": "rss",
+      "tags": ["industry", "ucaas"]
+    },
+    {
+      "name": "Google News - CCaaS",
+      "url": "https://news.google.com/rss/search?q=CCaaS&hl=en-US&gl=US&ceid=US:en",
+      "type": "rss",
+      "tags": ["industry", "ccaas"]
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CX Radar – Legna Labs</title>
+    <meta name="description"
+        content="CX Radar by Legna Labs helps product teams monitor UCaaS and CCaaS market signals, turning updates into actionable weekly PM intelligence." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords"
+        content="CX Radar, UCaaS, CCaaS, product management, market intelligence, AI agent, competitor monitoring, Legna Labs">
+    <meta name="author" content="Rafael Piloto">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="CX Radar – Market intelligence for UCaaS and CCaaS PMs">
+    <meta property="og:description"
+        content="AI agent for PMs that tracks UCaaS and CCaaS market movements and delivers concise, source-linked recommendations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cxradar.legnalabs.com/">
+    <meta property="og:image" content="https://legnalabs.com/assets/legna-og.png">
+    <meta property="og:site_name" content="Legna Labs">
+    <meta name="cxradar-api-base" content="">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/favicon-192.png">
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGN912CQFF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-JGN912CQFF');
+    </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container site-header-inner">
+            <a href="/" class="brand" style="text-decoration: none; color: inherit;">
+                <img src="/assets/legna-logo-main.png" alt="Legna Labs logo" class="brand-logo" />
+                <div>
+                    <div class="brand-name">Legna Labs</div>
+                    <div class="brand-tagline">Unique Solutions for Smart Experiences</div>
+                </div>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/#projects">Projects</a>
+                <a href="/#about">About</a>
+                <a href="/#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero product-hero">
+            <div class="container product-layout">
+                <div>
+                    <h1 class="hero-title">CX Radar</h1>
+                    <p class="hero-subtitle">
+                        AI market intelligence for <span class="hero-highlight">UCaaS and CCaaS product teams</span>.
+                    </p>
+                    <p class="hero-text">
+                        CX Radar helps Product Managers monitor market movement across UCaaS and CCaaS, then turns it
+                        into concise, source-backed recommendations for roadmap and go-to-market decisions.
+                    </p>
+
+                    <div class="product-card">
+                        <h2 style="margin: 0 0 8px; font-size: 1.1rem; color: #5c3b1a;">What the agent does</h2>
+                        <ul class="feature-list">
+                            <li>Tracks competitor launches, packaging shifts, and pricing changes.</li>
+                            <li>Detects new AI and automation capabilities in UCaaS and CCaaS.</li>
+                            <li>Highlights regulatory and carrier updates with product impact.</li>
+                            <li>Produces weekly digests with recommended PM actions.</li>
+                            <li>Escalates high-impact events with confidence and source links.</li>
+                        </ul>
+                    </div>
+
+                    <div class="hero-badge-row" style="margin-top: 16px;">
+                        <span class="hero-badge">🛰️ Daily signal scan</span>
+                        <span class="hero-badge">🧭 Weekly PM digest</span>
+                        <span class="hero-badge">🔗 Evidence-linked insights</span>
+                        <span class="hero-badge">📈 Roadmap-focused output</span>
+                    </div>
+                </div>
+
+                <aside>
+                    <div class="product-card" style="margin-top: 8px;">
+                        <div class="badge">Subscribe</div>
+                        <h2 style="margin: 0 0 10px; font-size: 1.05rem; color: #5c3b1a;">Get the weekly CX Radar brief</h2>
+                        <p class="project-description" style="margin-top: 0;">
+                            One email every <strong>Monday at 10:00 UTC</strong> with competitor moves, main market news, and source-linked
+                            UCaaS/CCaaS insights.
+                        </p>
+                        <form id="cxradar-subscribe-form" class="cxradar-form" novalidate>
+                            <input id="cxradar-subscribe-email" type="email" required placeholder="you@company.com"
+                                aria-label="Email for CX Radar subscription">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </form>
+                        <p id="cxradar-subscribe-msg" class="cxradar-msg" aria-live="polite"></p>
+                        <p class="project-description" style="margin-top: 14px;">Need to stop emails?</p>
+                        <form id="cxradar-unsubscribe-form" class="cxradar-form" novalidate>
+                            <input id="cxradar-unsubscribe-email" type="email" required placeholder="you@company.com"
+                                aria-label="Email for CX Radar unsubscribe">
+                            <button class="btn btn-ghost" type="submit">Unsubscribe</button>
+                        </form>
+                        <p id="cxradar-unsubscribe-msg" class="cxradar-msg" aria-live="polite"></p>
+                        <p class="trust-note">
+                            No daily spam. Unsubscribe anytime from this page or by emailing
+                            <strong><a href="mailto:support@legnalabs.com">support@legnalabs.com</a></strong>.
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="product-card" style="margin-top: 20px;">
+                    <h2 style="margin: 0 0 10px; font-size: 1.1rem; color: #5c3b1a;">Need more information?</h2>
+                    <p class="project-description" style="margin-top: 0;">
+                        For pilot requests or collaborations, reach out to us at:
+                        <strong><a href="mailto:support@legnalabs.com">support@legnalabs.com</a></strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>© <span id="year"></span> Legna Labs. All rights reserved.</div>
+            <div class="footer-links">
+                <a href="/">Back to Legna Labs</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        (function () {
+            const toggle = document.querySelector(".nav-toggle");
+            const nav = document.querySelector(".nav-links");
+            const links = nav.querySelectorAll("a");
+
+            if (!toggle || !nav) return;
+
+            toggle.addEventListener("click", () => {
+                nav.classList.toggle("is-open");
+                toggle.classList.toggle("is-open");
+            });
+
+            links.forEach(link => {
+                link.addEventListener("click", () => {
+                    nav.classList.remove("is-open");
+                    toggle.classList.remove("is-open");
+                });
+            });
+        })();
+
+        (function () {
+            const metaApi = document.querySelector('meta[name="cxradar-api-base"]');
+            const configuredApiBase = (window.CXRADAR_API_BASE || (metaApi ? metaApi.content : "") || "").trim();
+            const localhostFallback = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+                ? "http://127.0.0.1:8787"
+                : "";
+            const apiBase = configuredApiBase || localhostFallback;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+            async function postJson(path, payload) {
+                const res = await fetch(`${apiBase}${path}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+                const raw = await res.text();
+                let data;
+                try {
+                    data = raw ? JSON.parse(raw) : {};
+                } catch (e) {
+                    const preview = raw.replace(/\s+/g, " ").trim().slice(0, 120);
+                    data = {
+                        ok: false,
+                        error: `Subscription service unavailable (${res.status} ${res.statusText || "HTTP"}). ${preview ? `Response: ${preview}` : ""}`
+                    };
+                }
+                return { status: res.status, data };
+            }
+
+            function setMsg(node, text, ok) {
+                node.textContent = text;
+                node.style.color = ok ? "rgba(45, 26, 12, 0.85)" : "#9f2c2c";
+            }
+
+            const subscribeForm = document.getElementById("cxradar-subscribe-form");
+            const subscribeEmail = document.getElementById("cxradar-subscribe-email");
+            const subscribeMsg = document.getElementById("cxradar-subscribe-msg");
+            const unsubscribeForm = document.getElementById("cxradar-unsubscribe-form");
+            const unsubscribeEmail = document.getElementById("cxradar-unsubscribe-email");
+            const unsubscribeMsg = document.getElementById("cxradar-unsubscribe-msg");
+
+            subscribeForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const email = subscribeEmail.value.trim();
+                if (!emailPattern.test(email)) {
+                    setMsg(subscribeMsg, "Please enter a valid email.", false);
+                    return;
+                }
+                setMsg(subscribeMsg, "Submitting...", true);
+                try {
+                    const { status, data } = await postJson("/api/subscribe", { email });
+                    setMsg(subscribeMsg, data.message || data.error || `Request completed (${status}).`, status < 400);
+                } catch (err) {
+                    setMsg(subscribeMsg, "Unable to reach subscription service.", false);
+                }
+            });
+
+            unsubscribeForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const email = unsubscribeEmail.value.trim();
+                if (!emailPattern.test(email)) {
+                    setMsg(unsubscribeMsg, "Please enter a valid email.", false);
+                    return;
+                }
+                setMsg(unsubscribeMsg, "Submitting...", true);
+                try {
+                    const { status, data } = await postJson("/api/unsubscribe", { email });
+                    setMsg(unsubscribeMsg, data.message || data.error || `Request completed (${status}).`, status < 400);
+                } catch (err) {
+                    setMsg(unsubscribeMsg, "Unable to reach subscription service.", false);
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

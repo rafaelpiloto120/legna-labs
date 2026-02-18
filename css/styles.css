@@ -683,6 +683,57 @@ body {
     text-decoration: none;
 }
 
+.cxradar-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.cxradar-form input[type="email"] {
+    min-width: 240px;
+    flex: 1;
+    max-width: 420px;
+    border: 1px solid var(--legna-border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 0.92rem;
+    color: var(--legna-text);
+    background: #fff;
+}
+
+.cxradar-form input[type="email"]:focus {
+    outline: 2px solid rgba(43, 179, 177, 0.35);
+    outline-offset: 1px;
+}
+
+.cxradar-msg {
+    font-size: 0.84rem;
+    margin: 8px 0 0;
+    min-height: 1.1rem;
+}
+
+.value-points {
+    margin: 0 0 10px;
+    padding-left: 18px;
+}
+
+.value-points li {
+    margin-bottom: 7px;
+    font-size: 0.92rem;
+    color: rgba(45, 26, 12, 0.88);
+}
+
+.trust-note {
+    margin: 4px 0 14px;
+    font-size: 0.86rem;
+    color: rgba(45, 26, 12, 0.74);
+}
+
+.trust-note a {
+    color: var(--legna-brown);
+}
+
 /* ===== Legal pages ===== */
 .legal-page {
     padding: 40px 0 50px;
@@ -869,4 +920,5 @@ main {
         margin: 0 auto;         /* center the text */
         padding: 0 10px;        /* prevent touching edges */
     }
+
 }
