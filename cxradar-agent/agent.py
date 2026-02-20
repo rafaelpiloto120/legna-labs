@@ -584,8 +584,18 @@ def with_unsubscribe_footer(markdown_text: str, html_text: str, token: str) -> t
         return markdown_text, html_text
     sep = "&" if "?" in base else "?"
     link = f"{base}{sep}token={token}"
-    md = f"{markdown_text}\nUnsubscribe: {link}\n"
-    html = f'{html_text}<p>Unsubscribe: <a href="{escape(link)}">{escape(link)}</a></p>'
+    md = f"{markdown_text}\nUnsubscribe instantly: {link}\n"
+    unsubscribe_html = (
+        '<div style="margin-top:10px;font-size:12px;color:#6b7280;">'
+        f'Manage subscription: <a href="{escape(link)}" '
+        'style="color:#1d4ed8;text-decoration:none;">'
+        "Unsubscribe from CX Radar emails</a>.</div>"
+    )
+    marker = "</div>\n</body>"
+    if marker in html_text:
+        html = html_text.replace(marker, f"{unsubscribe_html}\n{marker}", 1)
+    else:
+        html = f"{html_text}{unsubscribe_html}"
     return md, html
 
 

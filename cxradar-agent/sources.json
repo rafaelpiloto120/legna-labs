@@ -13,12 +13,6 @@
       "tags": ["industry", "news"]
     },
     {
-      "name": "Talkdesk Blog",
-      "url": "https://www.talkdesk.com/blog/feed/",
-      "type": "rss",
-      "tags": ["competitor", "talkdesk"]
-    },
-    {
       "name": "RingCentral Blog",
       "url": "https://www.ringcentral.com/us/en/blog/feed/",
       "type": "rss",
