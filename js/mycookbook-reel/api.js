@@ -9,6 +9,7 @@ export async function generateRecipeDraft({ url, language }) {
     body: JSON.stringify({
       url,
       language,
+      botToken: window.__mycookbookCaptchaToken || "",
       measurementSystem: "Metric"
     })
   });
@@ -28,5 +29,33 @@ export async function generateRecipeDraft({ url, language }) {
     ok: true,
     recipe: payload.recipe,
     rateLimit
+  };
+}
+
+export async function fetchPublicConfig() {
+  const response = await fetch("/api/mycookbook-ai/public-config", {
+    method: "GET"
+  });
+
+  const payload = await response.json().catch(() => ({}));
+
+  if (!response.ok || !payload?.ok) {
+    return {
+      ok: false,
+      captcha: {
+        enabled: false,
+        provider: "",
+        siteKey: ""
+      }
+    };
+  }
+
+  return {
+    ok: true,
+    captcha: payload.captcha || {
+      enabled: false,
+      provider: "",
+      siteKey: ""
+    }
   };
 }

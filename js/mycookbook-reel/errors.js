@@ -3,7 +3,7 @@ const FALLBACK_MESSAGE =
 
 export function normalizeRecipeError(payload, status) {
   const code = payload?.error?.code || "backend_failure";
-  const message = payload?.error?.message || mapStatusToMessage(status);
+  const message = payload?.error?.message || mapStatusToMessage(status, payload);
 
   return {
     code,
@@ -11,9 +11,17 @@ export function normalizeRecipeError(payload, status) {
   };
 }
 
-function mapStatusToMessage(status) {
+function mapStatusToMessage(status, payload) {
   if (status === 429) {
     return "You’ve reached today’s recipe draft limit. Please try again tomorrow.";
+  }
+
+  if (status === 400 && payload?.error?.code === "captcha_required") {
+    return "Please complete the verification check and try again.";
+  }
+
+  if (status === 400 && payload?.error?.code === "captcha_failed") {
+    return "Verification failed. Please try the check again.";
   }
 
   if (status >= 500) {

@@ -819,15 +819,29 @@ body {
 .reel-inline-error,
 .reel-status-message,
 .reel-rate-note,
-.reel-draft-note {
+.reel-draft-note,
+.reel-captcha-note {
     margin: 10px 0 0;
     font-size: 0.9rem;
 }
 
 .reel-inline-note,
 .reel-rate-note,
-.reel-draft-note {
+.reel-draft-note,
+.reel-captcha-note {
     color: rgba(45, 26, 12, 0.72);
+}
+
+.reel-captcha-shell {
+    margin-top: 14px;
+    padding: 14px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(92, 59, 26, 0.08);
+}
+
+.reel-captcha-container {
+    min-height: 65px;
 }
 
 .reel-inline-error,

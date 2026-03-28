@@ -36,6 +36,14 @@ module.exports = {
       "https://play.google.com/store/apps/details?id=ai.mycookbook.app",
     deepLinkScheme: process.env.MYCOOKBOOK_APP_SCHEME || "mycookbookai",
     deepLinkHost: process.env.MYCOOKBOOK_APP_HOST || "import-recipe"
+  },
+  captcha: {
+    provider: process.env.MYCOOKBOOK_CAPTCHA_PROVIDER || "turnstile",
+    siteKey: process.env.MYCOOKBOOK_TURNSTILE_SITE_KEY || "",
+    secretKey: process.env.MYCOOKBOOK_TURNSTILE_SECRET_KEY || "",
+    enabled:
+      Boolean(process.env.MYCOOKBOOK_TURNSTILE_SITE_KEY) &&
+      Boolean(process.env.MYCOOKBOOK_TURNSTILE_SECRET_KEY)
   }
 };
 

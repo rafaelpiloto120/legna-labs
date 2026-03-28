@@ -10,6 +10,7 @@ const { normalizeBackendSuccess } = require("./server/backend-response");
 const { normalizeError, normalizeBackendError } = require("./server/errors");
 const { validateInstagramReelUrl } = require("./server/instagram");
 const { DailyIpRateLimiter } = require("./server/rate-limit-store");
+const { verifyCaptchaToken } = require("./server/captcha");
 
 const rateLimiter = new DailyIpRateLimiter({
   limit: config.reelDailyLimit,
@@ -39,6 +40,11 @@ const server = http.createServer(async (req, res) => {
 
     if (requestUrl.pathname === "/api/mycookbook-ai/reel-to-recipe") {
       await handleRecipeProxy(req, res);
+      return;
+    }
+
+    if (requestUrl.pathname === "/api/mycookbook-ai/public-config") {
+      handlePublicConfig(req, res);
       return;
     }
 
@@ -126,9 +132,9 @@ async function handleRecipeProxy(req, res) {
     return;
   }
 
-  const botGuard = verifyBotProtection(req, body.value);
+  const botGuard = await verifyBotProtection(req, body.value);
   if (!botGuard.ok) {
-    sendJson(res, botGuard.status, botGuard.payload);
+    sendJson(res, botGuard.status, botGuard.body);
     return;
   }
 
@@ -161,6 +167,30 @@ async function handleRecipeProxy(req, res) {
       remaining: rateState.remaining,
       limit: rateState.limit,
       resetAt: rateState.resetAt
+    }
+  });
+}
+
+function handlePublicConfig(req, res) {
+  if (req.method !== "GET" && req.method !== "HEAD") {
+    sendJson(
+      res,
+      405,
+      normalizeError({
+        status: 405,
+        code: "method_not_allowed",
+        message: "Use GET for public config."
+      }).body
+    );
+    return;
+  }
+
+  sendJson(res, 200, {
+    ok: true,
+    captcha: {
+      enabled: config.captcha.enabled,
+      provider: config.captcha.provider,
+      siteKey: config.captcha.enabled ? config.captcha.siteKey : ""
     }
   });
 }
@@ -208,14 +238,13 @@ async function fetchUpstream(url, language) {
   };
 }
 
-function verifyBotProtection(_req, body) {
+async function verifyBotProtection(req, body) {
   const token = typeof body.botToken === "string" ? body.botToken.trim() : "";
 
-  if (!token) {
-    return { ok: true };
-  }
-
-  return { ok: true };
+  return verifyCaptchaToken({
+    token,
+    remoteIp: getClientIp(req)
+  });
 }
 
 function normalizeLanguage(language) {
