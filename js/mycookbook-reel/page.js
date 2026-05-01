@@ -103,7 +103,7 @@ async function handleSubmit(event) {
   latestRecipe = parseRecipeResponse(response.recipe);
   renderRecipe(latestRecipe);
   showStatus(
-    "Recipe draft ready. Review it carefully before cooking, then add it to MyCookbook AI."
+    "Recipe draft ready. Review it carefully before cooking, then add it to Cook N’Eat AI."
   );
 }
 

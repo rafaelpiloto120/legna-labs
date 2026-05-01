@@ -2,7 +2,7 @@
   "name": "legna-labs-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Legna Labs marketing site with MyCookbook AI reel-to-recipe proxy.",
+  "description": "Legna Labs marketing site with Cook N’Eat AI reel-to-recipe proxy.",
   "scripts": {
     "start": "node server.js"
   },

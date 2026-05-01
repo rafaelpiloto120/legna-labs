@@ -1,7 +1,7 @@
 import { normalizeRecipeError, readRateLimitMeta } from "./errors.js";
 
 export async function generateRecipeDraft({ url, language }) {
-  const response = await fetch("/api/mycookbook-ai/reel-to-recipe", {
+  const response = await fetch("/api/cook-neat-ai/reel-to-recipe", {
     method: "POST",
     headers: {
       "content-type": "application/json"
@@ -33,7 +33,7 @@ export async function generateRecipeDraft({ url, language }) {
 }
 
 export async function fetchPublicConfig() {
-  const response = await fetch("/api/mycookbook-ai/public-config", {
+  const response = await fetch("/api/cook-neat-ai/public-config", {
     method: "GET"
   });
 

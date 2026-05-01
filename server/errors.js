@@ -30,7 +30,7 @@ function normalizeBackendError(status, payload) {
   if (/cookie/.test(lowered)) {
     return normalizeError({
       status: 503,
-      code: "insufficient_cookies",
+      code: "extractor_session_unavailable",
       message:
         "Recipe extraction is temporarily unavailable right now. Please try again later."
     });

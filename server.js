@@ -34,16 +34,37 @@ const MIME_TYPES = {
   ".xml": "application/xml; charset=utf-8"
 };
 
+const REDIRECTS = new Map([
+  ["/mycookbook-ai", "/cook-neat-ai/"],
+  ["/mycookbook-ai/", "/cook-neat-ai/"],
+  ["/mycookbook-ai/privacy.html", "/cook-neat-ai/privacy.html"],
+  ["/mycookbook-ai/terms.html", "/cook-neat-ai/terms.html"],
+  ["/mycookbook-ai/delete-account.html", "/cook-neat-ai/delete-account.html"],
+  ["/mycookbook-ai/reel-to-recipe.html", "/instagram-reel-importer/"]
+]);
+
 const server = http.createServer(async (req, res) => {
   try {
     const requestUrl = new URL(req.url, `http://${req.headers.host || "localhost"}`);
 
-    if (requestUrl.pathname === "/api/mycookbook-ai/reel-to-recipe") {
+    const redirectTarget = REDIRECTS.get(requestUrl.pathname);
+    if (redirectTarget) {
+      sendRedirect(res, redirectTarget, 301);
+      return;
+    }
+
+    if (
+      requestUrl.pathname === "/api/mycookbook-ai/reel-to-recipe" ||
+      requestUrl.pathname === "/api/cook-neat-ai/reel-to-recipe"
+    ) {
       await handleRecipeProxy(req, res);
       return;
     }
 
-    if (requestUrl.pathname === "/api/mycookbook-ai/public-config") {
+    if (
+      requestUrl.pathname === "/api/mycookbook-ai/public-config" ||
+      requestUrl.pathname === "/api/cook-neat-ai/public-config"
+    ) {
       handlePublicConfig(req, res);
       return;
     }
@@ -381,6 +402,14 @@ function sendJson(res, status, payload) {
     "content-type": "application/json; charset=utf-8"
   });
   res.end(JSON.stringify(payload));
+}
+
+function sendRedirect(res, location, status) {
+  res.writeHead(status, {
+    location,
+    "cache-control": "public, max-age=3600"
+  });
+  res.end();
 }
 
 function ensureTrailingSlash(value) {
