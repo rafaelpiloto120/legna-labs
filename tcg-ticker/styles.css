@@ -1,0 +1,94 @@
+/* Product identity is scoped to this route; studio styles remain shared. */
+.ticker-page { --ticker-red: #bf2927; --ticker-ink: #202120; background: #f7f5ef; color: var(--ticker-ink); }
+.ticker-page .container { max-width: 1200px; padding-inline: 28px; }
+.ticker-page .site-header { background: #f7f5eff5; border-color: #deddd6; }
+.ticker-page .brand { text-decoration: none; color: inherit; margin-left: 0; }
+.ticker-page .brand-name { color: var(--ticker-ink); }
+.ticker-page a:focus-visible, .ticker-page button:focus-visible, .ticker-page summary:focus-visible { outline: 3px solid #1263bb; outline-offset: 5px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip-link { position: fixed; top: -100px; left: 20px; z-index: 100; padding: 10px 20px; background: white; color: #202120; }
+.skip-link:focus { top: 10px; }
+.ticker-hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 35px; padding-block: 58px 48px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 700; margin: 0 0 22px; }
+.new-label { display: inline-block; background: var(--ticker-red); color: white; padding: 4px 8px; margin-right: 8px; border-radius: 3px; }
+.ticker-page h1 { margin: 0; font-size: 1.1rem; font-weight: 650; }
+.ticker-page h1 > span { display: block; font-size: clamp(2.3rem, 4.2vw, 3.5rem); font-weight: 750; letter-spacing: -.055em; line-height: 1.08; margin-top: 15px; }
+.lede { max-width: 455px; font-size: 1.1rem; line-height: 1.7; margin: 24px 0; color: #52534e; }
+.ticker-buy { display: inline-flex; gap: 25px; align-items: center; justify-content: center; padding: 14px 23px; min-height: 50px; border-radius: 5px; background: var(--ticker-red); color: #fff; font-size: 1rem; font-weight: 650; text-decoration: none; }
+.ticker-buy:hover { background: #9f2220; }
+.text-link { color: inherit; font-size: .9rem; font-weight: 650; text-underline-offset: 5px; }
+.purchase-note { font-size: .8rem; color: #5e5f58; margin-top: 15px; }
+.ticker-page figure { margin: 0; }
+.hero-product { text-align: center; }
+.hero-product img { display: block; width: 100%; height: auto; max-height: 490px; object-fit: contain; }
+.ticker-page figcaption { font-size: .8rem; color: #61625c; margin-top: 12px; }
+.ticker-spec-strip { border-block: 1px solid #d9d8d0; }
+.ticker-spec-strip > div { display: flex; justify-content: space-between; gap: 20px; padding-block: 23px; font-size: .9rem; }
+.ticker-spec-strip strong { margin-right: 5px; }
+.ticker-section { padding-block: 88px; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.ticker-page h2 { font-size: clamp(1.9rem, 3vw, 2.65rem); letter-spacing: -.045em; line-height: 1.14; margin: 0 0 23px; }
+.ticker-page h3 { font-size: 1.2rem; letter-spacing: -.02em; margin: 14px 0 8px; }
+.ticker-page p { line-height: 1.7; }
+.photo img, .lifestyle-image img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.feature-rows { margin-top: 28px; }
+.feature-rows > div { border-top: 1px solid #d9d8d0; padding: 15px 0; }
+.feature-rows dt { font-weight: 650; }
+.feature-rows dd { margin: 4px 0 0; color: #555650; }
+.small { color: #62635b; font-size: .875rem; }
+.setup-section { background: #eeede5; }
+.steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 48px; list-style: none; padding: 15px 0 0; margin-bottom: 0; }
+.step-number { color: var(--ticker-red); font-size: .875rem; font-weight: 700; }
+.steps p { margin: 0; color: #555650; }
+.portal-section .ticker-buy { margin-top: 12px; }
+.lifestyle { background: #232523; color: #fff; padding-block: 55px; }
+.lifestyle-copy p { color: #dedfd8; }
+.lifestyle-copy .eyebrow { color: #ddd0a7; }
+.specs > div { display: grid; grid-template-columns: 100px 1fr; gap: 20px; border-top: 1px solid #d9d8d0; padding: 13px 0; }
+.specs dt { font-weight: 650; }
+.specs dd { margin: 0; color: #555650; }
+.faq-section { padding-bottom: 85px; }
+.faq-section details { border-bottom: 1px solid #d9d8d0; padding: 19px 0; }
+.faq-section summary { cursor: pointer; font-weight: 650; padding-right: 15px; }
+.faq-section details p { max-width: 850px; color: #555650; margin-bottom: 0; }
+.faq-section .ticker-buy { margin-top: 15px; }
+.final-section { text-align: center; background: #eae7de; padding: 64px 0; }
+.data-note { padding-block: 38px; font-size: .875rem; color: #5c5d56; }
+.data-note p { margin: 8px 0; }
+.ticker-page .site-footer { margin: 0; background: #f0eee7; border-top: 1px solid #d9d8d0; }
+.trademark { font-size: .8rem; color: #5c5d56; padding-bottom: 16px; max-width: 980px; }
+section[id] { scroll-margin-top: 110px; }
+@media (max-width: 900px) { .split { gap: 32px; } .ticker-spec-strip > div { flex-wrap: wrap; justify-content: center; } .steps { gap: 25px; } }
+@media (max-width: 720px) {
+ .ticker-page .container { padding-inline: 22px; }
+ .ticker-page .brand-logo { width: 42px; height: 42px; }
+ .ticker-page .brand-tagline { display: none; }
+ .ticker-page .site-header-inner { min-height: 70px; }
+ .ticker-page .nav-links { background: #f7f5ef; }
+ .ticker-hero { grid-template-columns: 1fr; gap: 22px; padding-block: 28px 25px; }
+ .ticker-intro { display: contents; }
+ .ticker-hero .eyebrow { margin-bottom: -8px; font-size: .68rem; }
+ .ticker-page h1 > span { font-size: clamp(2.05rem, 8vw, 3rem); margin-top: 7px; }
+ .hero-product { grid-row: 3; }
+ .hero-product img { max-height: 265px; }
+ .hero-product figcaption { display: none; }
+ .lede { margin: 0; font-size: 1rem; line-height: 1.5; }
+ .ticker-hero .purchase-note { margin: -10px 0 0; }
+ .ticker-spec-strip > div { display: grid; grid-template-columns: 1fr 1fr; font-size: .8rem; gap: 15px; }
+ .ticker-spec-strip strong { display: block; }
+ .split { grid-template-columns: 1fr; gap: 30px; }
+ .ticker-section { padding-block: 50px; }
+ .steps { grid-template-columns: 1fr; gap: 28px; }
+ .steps li { padding-left: 44px; position: relative; }
+ .step-number { position: absolute; left: 0; top: 17px; }
+ .lifestyle { padding-block: 28px 42px; }
+ .faq-section { padding-bottom: 50px; }
+ .ticker-page .footer-inner { align-items: flex-start; }
+ .ticker-page .footer-links { flex-wrap: wrap; }
+}
+@media (max-width: 720px) and (max-height: 740px) {
+ .ticker-hero { gap: 16px; padding-top: 20px; }
+ .hero-product img { max-height: 185px; }
+ .ticker-hero .eyebrow { margin-bottom: 0; }
+ .ticker-hero .purchase-note { margin-top: -5px; }
+}
