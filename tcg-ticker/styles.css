@@ -92,3 +92,35 @@ section[id] { scroll-margin-top: 110px; }
  .ticker-hero .eyebrow { margin-bottom: 0; }
  .ticker-hero .purchase-note { margin-top: -5px; }
 }
+
+/* TCG Ticker legal pages */
+.ticker-legal { padding: 64px 0 88px; }
+.ticker-legal-layout { display: grid; grid-template-columns: minmax(190px, 240px) minmax(0, 760px); column-gap: 64px; }
+.ticker-legal-intro { grid-column: 1 / -1; max-width: 790px; padding-bottom: 45px; }
+.ticker-legal-page h1 { font-size: clamp(2.4rem, 5vw, 4rem); letter-spacing: -.055em; line-height: 1; margin: 0 0 18px; }
+.legal-updated { color: #62635b; font-size: .875rem; }
+.legal-summary { font-size: 1.15rem; color: #4d4e49; max-width: 720px; }
+.legal-contents { align-self: start; position: sticky; top: 110px; display: flex; flex-direction: column; gap: 9px; border-top: 3px solid var(--ticker-red); padding: 17px 0; font-size: .875rem; }
+.legal-contents strong { margin-bottom: 5px; }
+.legal-contents a { color: #555650; text-decoration-color: #b8b8b1; text-underline-offset: 4px; }
+.legal-copy { min-width: 0; }
+.legal-copy section { border-top: 1px solid #d9d8d0; padding: 30px 0 12px; scroll-margin-top: 110px; }
+.legal-copy section:first-child { padding-top: 0; border-top: 0; }
+.legal-copy h2 { font-size: 1.55rem; margin-bottom: 14px; }
+.legal-copy h3 { font-size: 1rem; margin: 22px 0 5px; }
+.legal-copy p, .legal-copy li { color: #4d4e49; }
+.legal-copy ul { padding-left: 21px; }
+.legal-copy li { margin-bottom: 8px; line-height: 1.65; }
+.legal-copy a { color: #8f201f; text-underline-offset: 3px; }
+.legal-highlight { margin: 20px -25px 0; padding: 28px 25px 18px !important; border: 1px solid #d8d2c8 !important; border-left: 4px solid var(--ticker-red) !important; background: #eeede5; border-radius: 4px; }
+.ticker-legal-page .footer-links [aria-current="page"] { font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+
+@media (max-width: 760px) {
+ .ticker-legal { padding: 40px 0 60px; }
+ .ticker-legal-layout { grid-template-columns: 1fr; }
+ .ticker-legal-intro { padding-bottom: 28px; }
+ .legal-summary { font-size: 1rem; }
+ .legal-contents { position: static; margin-bottom: 35px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; }
+ .legal-contents strong { grid-column: 1 / -1; }
+ .legal-highlight { margin-inline: -10px; padding-inline: 15px !important; }
+}
