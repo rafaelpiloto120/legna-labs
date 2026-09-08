@@ -1,9 +1,6 @@
 /* Product identity is scoped to this route; studio styles remain shared. */
 .ticker-page { --ticker-red: #bf2927; --ticker-ink: #202120; background: #f7f5ef; color: var(--ticker-ink); }
 .ticker-page .container { max-width: 1200px; padding-inline: 28px; }
-.ticker-page .site-header { background: #f7f5eff5; border-color: #deddd6; }
-.ticker-page .brand { text-decoration: none; color: inherit; margin-left: 0; }
-.ticker-page .brand-name { color: var(--ticker-ink); }
 .ticker-page a:focus-visible, .ticker-page button:focus-visible, .ticker-page summary:focus-visible { outline: 3px solid #1263bb; outline-offset: 5px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .skip-link { position: fixed; top: -100px; left: 20px; z-index: 100; padding: 10px 20px; background: white; color: #202120; }
@@ -55,16 +52,11 @@
 .final-section { text-align: center; background: #eae7de; padding: 64px 0; }
 .data-note { padding-block: 38px; font-size: .875rem; color: #5c5d56; }
 .data-note p { margin: 8px 0; }
-.ticker-page .site-footer { margin: 0; background: #f0eee7; border-top: 1px solid #d9d8d0; }
 .trademark { font-size: .8rem; color: #5c5d56; padding-bottom: 16px; max-width: 980px; }
 section[id] { scroll-margin-top: 110px; }
 @media (max-width: 900px) { .split { gap: 32px; } .ticker-spec-strip > div { flex-wrap: wrap; justify-content: center; } .steps { gap: 25px; } }
 @media (max-width: 720px) {
  .ticker-page .container { padding-inline: 22px; }
- .ticker-page .brand-logo { width: 42px; height: 42px; }
- .ticker-page .brand-tagline { display: none; }
- .ticker-page .site-header-inner { min-height: 70px; }
- .ticker-page .nav-links { background: #f7f5ef; }
  .ticker-hero { grid-template-columns: 1fr; gap: 22px; padding-block: 28px 25px; }
  .ticker-intro { display: contents; }
  .ticker-hero .eyebrow { margin-bottom: -8px; font-size: .68rem; }
